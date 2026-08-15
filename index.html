@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omkar Nath Reddy | Aspiring AI Software Engineer</title>
+  <meta name="description" content="Portfolio of Omkar Nath Reddy — B.Tech Student building next-generation software, LLM applications, autonomous AI agents, and workflow automations." />
+  
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Omkar Nath Reddy | Aspiring AI Software Engineer" />
+  <meta property="og:description" content="B.Tech Student building toward AI Engineering through software development, AI, automation, and real-world projects." />
+  <meta name="theme-color" content="#030712" />
+
+  <!-- Google Fonts: Space Grotesk (Headers), Plus Jakarta Sans (Body), JetBrains Mono (Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons & Three.js CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Glowing Cursor -->
+  <div id="custom-cursor" class="custom-cursor"></div>
+  <div id="custom-cursor-dot" class="custom-cursor-dot"></div>
+
+  <!-- Background 3D WebGL Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Audio Synthesizer Toggle -->
+  <button id="sound-toggle" class="sound-toggle" aria-label="Toggle UI Sound Effects" title="Toggle UI Sound Effects">
+    <i data-lucide="volume-x" id="sound-icon"></i>
+    <span class="sound-label">AUDIO: OFF</span>
+  </button>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">Omkar</span>
+        <span class="brand-ai">.ai</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#pipeline" class="nav-link">AI Pipeline</a>
+        <a href="#journey" class="nav-link">Journey</a>
+        <a href="#contact" class="nav-link nav-link-cta">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/omkar-nath-rdy" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" title="GitHub Profile">
+          <i data-lucide="github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/omkar-nath-reddy-peddireddy-9067a936b/" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" title="LinkedIn Profile">
+          <i data-lucide="linkedin"></i>
+        </a>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="#hero" class="mobile-link">Home</a>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#pipeline" class="mobile-link">AI Pipeline</a>
+      <a href="#journey" class="mobile-link">Journey</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <div class="mobile-socials">
+        <a href="https://github.com/omkar-nath-rdy" target="_blank" rel="noopener noreferrer" class="social-chip">
+          <i data-lucide="github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/omkar-nath-reddy-peddireddy-9067a936b/" target="_blank" rel="noopener noreferrer" class="social-chip">
+          <i data-lucide="linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <!-- Status Pill -->
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span class="status-text">B.Tech Student • Aspiring AI Software Engineer</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Omkar</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Building toward AI engineering through software development, autonomous agents, workflow automation, and real-world intelligent systems.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag-item"><i data-lucide="cpu"></i> Generative AI</span>
+          <span class="tag-item"><i data-lucide="bot"></i> AI Agents</span>
+          <span class="tag-item"><i data-lucide="code-2"></i> Software Eng</span>
+          <span class="tag-item"><i data-lucide="workflow"></i> Automation</span>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary magnetic-btn">
+            <span>Explore My Work</span>
+            <i data-lucide="arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-secondary magnetic-btn">
+            <span>Get in Touch</span>
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+
+        <!-- Live Interactive Terminal -->
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-title">omkar@ai-engineer: ~</div>
+            <div class="terminal-badge">LIVE CLI</div>
+          </div>
+          <div class="terminal-body" id="terminal-output">
+            <p class="terminal-line"><span class="prompt">$</span> <span class="cmd">whoami</span></p>
+            <p class="terminal-response">Omkar Nath Reddy — B.Tech Student &amp; Aspiring AI Engineer</p>
+            <p class="terminal-line"><span class="prompt">$</span> <span class="cmd">omkar.status</span></p>
+            <p class="terminal-response text-cyan">⚡ Actively building LLM apps, agent workflows &amp; software tools</p>
+            <p class="terminal-line"><span class="prompt">$</span> <span class="cmd">help</span></p>
+            <p class="terminal-help">Available: <span class="cli-cmd" onclick="runCliCommand('skills')">skills</span>, <span class="cli-cmd" onclick="runCliCommand('projects')">projects</span>, <span class="cli-cmd" onclick="runCliCommand('pipeline')">pipeline</span>, <span class="cli-cmd" onclick="runCliCommand('contact')">contact</span>, <span class="cli-cmd" onclick="runCliCommand('clear')">clear</span></p>
+          </div>
+          <div class="terminal-input-row">
+            <span class="prompt">$</span>
+            <input type="text" id="terminal-input" placeholder="Type a command (e.g. skills, projects)..." autocomplete="off" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION (BENTO GRID) ==================== -->
+    <section id="about" class="section about-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><i data-lucide="user"></i> CORE FOUNDATIONS</div>
+        <h2 class="section-title">The Engineering <span class="gradient-text">Mindset</span></h2>
+        <p class="section-subtitle">Bridging foundational software craftsmanship with bleeding-edge AI workflows.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Bento Card 1: Who I Am -->
+        <div class="bento-card card-who">
+          <div class="bento-icon"><i data-lucide="graduation-cap"></i></div>
+          <span class="bento-badge">Identity</span>
+          <h3>Who I Am</h3>
+          <p class="bento-text">
+            I am a B.Tech student who believes the best way to master computer science is to build useful, production-ready software. I'm fascinated by the intersection of traditional programming, system architecture, and modern artificial intelligence.
+          </p>
+          <div class="bento-meta">
+            <div class="meta-item"><i data-lucide="map-pin"></i> India (IST)</div>
+            <div class="meta-item"><i data-lucide="clock"></i> <span id="ist-clock">Loading IST...</span></div>
+          </div>
+        </div>
+
+        <!-- Bento Card 2: What I Build -->
+        <div class="bento-card card-build">
+          <div class="bento-icon"><i data-lucide="layers"></i></div>
+          <span class="bento-badge">Focus Area</span>
+          <h3>What I Build</h3>
+          <p class="bento-text">
+            Full-stack web applications, LLM-powered assistants, automated workflow systems with n8n &amp; APIs, and developer tools designed to streamline everyday student &amp; developer productivity.
+          </p>
+          <ul class="bento-list">
+            <li><i data-lucide="check-circle-2"></i> LLM Reasoning &amp; Retrieval Pipelines</li>
+            <li><i data-lucide="check-circle-2"></i> Autonomous Multi-Step Agent Workflows</li>
+            <li><i data-lucide="check-circle-2"></i> Modern Responsive Web Interfaces</li>
+          </ul>
+        </div>
+
+        <!-- Bento Card 3: What I'm Learning -->
+        <div class="bento-card card-learning">
+          <div class="bento-icon"><i data-lucide="sparkles"></i></div>
+          <span class="bento-badge">Current Trajectory</span>
+          <h3>What I'm Learning</h3>
+          <div class="learning-pills">
+            <span class="learning-pill"><span class="dot-green"></span> Data Structures &amp; Algorithms</span>
+            <span class="learning-pill"><span class="dot-green"></span> Python &amp; AI Frameworks</span>
+            <span class="learning-pill"><span class="dot-green"></span> Agentic Architecture</span>
+            <span class="learning-pill"><span class="dot-green"></span> System Design Concepts</span>
+          </div>
+        </div>
+
+        <!-- Bento Card 4: The Vision -->
+        <div class="bento-card card-vision">
+          <div class="bento-icon"><i data-lucide="target"></i></div>
+          <span class="bento-badge">Goal</span>
+          <h3>The Vision</h3>
+          <p class="bento-text">
+            To evolve into an AI Software Engineer who can design resilient distributed backends and deploy autonomous agent systems that solve meaningful, high-leverage challenges.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section id="skills" class="section skills-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><i data-lucide="zap"></i> TECHNICAL MATRIX</div>
+        <h2 class="section-title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+        <p class="section-subtitle">Categorized without inflated percentages — transparently representing my technical toolkit.</p>
+      </div>
+
+      <!-- Skill Filter Tabs -->
+      <div class="skills-filter-bar">
+        <button class="skill-tab active" data-filter="all">All Skills</button>
+        <button class="skill-tab" data-filter="programming">Programming</button>
+        <button class="skill-tab" data-filter="web">Web Development</button>
+        <button class="skill-tab" data-filter="ai">AI &amp; GenAI</button>
+        <button class="skill-tab" data-filter="automation">Automation</button>
+        <button class="skill-tab" data-filter="tools">Developer Tools</button>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="skills-grid" id="skills-container">
+        <!-- Dynamic content rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section id="projects" class="section projects-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><i data-lucide="folder-git-2"></i> FEATURED BUILDS</div>
+        <h2 class="section-title">Engineered <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">Real-world systems and practical applications built with software &amp; AI architectures.</p>
+      </div>
+
+      <div class="projects-grid" id="projects-container">
+        <!-- Dynamic content rendered by JS -->
+      </div>
+    </section>
+
+    <!-- ==================== AI PIPELINE SECTION ==================== -->
+    <section id="pipeline" class="section pipeline-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><i data-lucide="git-merge"></i> ENGINEERING ARCHITECTURE</div>
+        <h2 class="section-title">Building Toward <span class="gradient-text">AI Engineering</span></h2>
+        <p class="section-subtitle">How modern programming and intelligent autonomous systems connect together.</p>
+      </div>
+
+      <div class="pipeline-wrapper">
+        <div class="pipeline-track">
+          <!-- Pipeline Step 1 -->
+          <div class="pipeline-node">
+            <div class="node-badge">01</div>
+            <div class="node-icon"><i data-lucide="binary"></i></div>
+            <h4>Programming &amp; DSA</h4>
+            <p>Core computation, algorithmic logic, Java &amp; C memory mental models.</p>
+          </div>
+
+          <div class="pipeline-connector"><i data-lucide="chevron-right"></i></div>
+
+          <!-- Pipeline Step 2 -->
+          <div class="pipeline-node">
+            <div class="node-badge">02</div>
+            <div class="node-icon"><i data-lucide="layout"></i></div>
+            <h4>Full-Stack Web</h4>
+            <p>React interfaces, REST APIs, state orchestration &amp; async pipelines.</p>
+          </div>
+
+          <div class="pipeline-connector"><i data-lucide="chevron-right"></i></div>
+
+          <!-- Pipeline Step 3 -->
+          <div class="pipeline-node highlight">
+            <div class="node-badge">03</div>
+            <div class="node-icon"><i data-lucide="sparkles"></i></div>
+            <h4>Generative AI &amp; LLMs</h4>
+            <p>Prompt engineering, model orchestration, structured outputs &amp; context.</p>
+          </div>
+
+          <div class="pipeline-connector"><i data-lucide="chevron-right"></i></div>
+
+          <!-- Pipeline Step 4 -->
+          <div class="pipeline-node">
+            <div class="node-badge">04</div>
+            <div class="node-icon"><i data-lucide="bot"></i></div>
+            <h4>Autonomous Agents</h4>
+            <p>Tool calling, iterative reasoning loops, memory &amp; task decomposition.</p>
+          </div>
+
+          <div class="pipeline-connector"><i data-lucide="chevron-right"></i></div>
+
+          <!-- Pipeline Step 5 -->
+          <div class="pipeline-node">
+            <div class="node-badge">05</div>
+            <div class="node-icon"><i data-lucide="workflow"></i></div>
+            <h4>Workflow Automation</h4>
+            <p>n8n node pipelines, webhook listeners, scheduling &amp; third-party integrations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== JOURNEY ROADMAP SECTION ==================== -->
+    <section id="journey" class="section journey-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><i data-lucide="milestone"></i> LEARNING TRAJECTORY</div>
+        <h2 class="section-title">The Engineering <span class="gradient-text">Roadmap</span></h2>
+        <p class="section-subtitle">A transparent timeline of my continuous learning journey and future milestones.</p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div id="timeline-list" class="timeline-list">
+          <!-- Dynamic timeline items rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="section contact-section">
+      <div class="section-header">
+        <div class="section-eyebrow"><i data-lucide="message-square"></i> LET'S CONNECT</div>
+        <h2 class="section-title">Let's Build Something <span class="gradient-text">Intelligent</span></h2>
+        <p class="section-subtitle">Open for conversations, hackathon collaborations, mentorship, and exciting projects.</p>
+      </div>
+
+      <div class="contact-card-grid">
+        <!-- Direct Email Card -->
+        <div class="contact-info-card">
+          <div class="card-icon-header">
+            <div class="icon-circle"><i data-lucide="mail"></i></div>
+            <div>
+              <h3>Email Omkar</h3>
+              <p>Direct communication inbox</p>
+            </div>
+          </div>
+          <div class="email-display-box">
+            <span class="email-text">omkarnathreddypeddireddy@gmail.com</span>
+            <button id="copy-email-btn" class="copy-btn" title="Copy Email">
+              <i data-lucide="copy" id="copy-icon"></i>
+            </button>
+          </div>
+          <a href="mailto:omkarnathreddypeddireddy@gmail.com" class="btn btn-primary btn-block">
+            <span>Send Email via Client</span>
+            <i data-lucide="external-link"></i>
+          </a>
+        </div>
+
+        <!-- Social Connections Card -->
+        <div class="contact-info-card">
+          <div class="card-icon-header">
+            <div class="icon-circle"><i data-lucide="network"></i></div>
+            <div>
+              <h3>Connect Online</h3>
+              <p>GitHub &amp; LinkedIn profiles</p>
+            </div>
+          </div>
+          <div class="social-button-stack">
+            <a href="https://github.com/omkar-nath-rdy" target="_blank" rel="noopener noreferrer" class="social-btn github">
+              <i data-lucide="github"></i>
+              <div class="social-btn-text">
+                <span class="social-label">GitHub Profile</span>
+                <span class="social-handle">@omkar-nath-rdy</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="arrow-icon"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/omkar-nath-reddy-peddireddy-9067a936b/" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
+              <i data-lucide="linkedin"></i>
+              <div class="social-btn-text">
+                <span class="social-label">LinkedIn Network</span>
+                <span class="social-handle">Omkar Nath Reddy Peddireddy</span>
+              </div>
+              <i data-lucide="arrow-up-right" class="arrow-icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Message Composer -->
+      <div class="mail-composer-card">
+        <h3><i data-lucide="send"></i> Quick Message Composer</h3>
+        <p>Compose a note and launch your default email client with one click:</p>
+        <form id="quick-mail-form" onsubmit="handleQuickMail(event)">
+          <div class="form-row">
+            <input type="text" id="mail-name" placeholder="Your Name" required />
+            <input type="text" id="mail-subject" placeholder="Subject / Project Topic" required />
+          </div>
+          <textarea id="mail-body" rows="4" placeholder="Your message or collaboration idea..." required></textarea>
+          <button type="submit" class="btn btn-primary">
+            <span>Compose &amp; Send Mail</span>
+            <i data-lucide="send"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="brand-bracket">&lt;</span>
+          <span class="brand-name">Omkar</span>
+          <span class="brand-ai">.ai</span>
+          <span class="brand-bracket">/&gt;</span>
+        </div>
+        <p class="footer-desc">B.Tech Student • Aspiring AI Software Engineer</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#pipeline">Pipeline</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-socials">
+          <a href="https://github.com/omkar-nath-rdy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a href="https://www.linkedin.com/in/omkar-nath-reddy-peddireddy-9067a936b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          <a href="mailto:omkarnathreddypeddireddy@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+        </div>
+        <p class="copyright">© 2026 Omkar Nath Reddy. Built with Three.js &amp; WebGL.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== PROJECT DETAIL MODAL ==================== -->
+  <div id="project-modal" class="modal-backdrop" onclick="closeProjectModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeProjectModal()" aria-label="Close Modal">
+        <i data-lucide="x"></i>
+      </button>
+      <div id="modal-body-container">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast">
+    <i data-lucide="check-circle" class="toast-icon"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
