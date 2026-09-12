@@ -36,6 +36,7 @@ export default function Footer() {
                 src={personalData.avatarUrl} 
                 alt={personalData.name} 
                 className="w-full h-full object-cover rounded-lg"
+                onError={(e) => { e.currentTarget.src = './omkar-avatar.jpg'; }}
               />
             </div>
             <div className="flex flex-col gap-0.5">

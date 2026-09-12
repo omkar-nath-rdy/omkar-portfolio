@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node -e \"require('fs').copyFileSync('index.dev.html', 'index.html')\"",
     "build": "vite build",
+    "postbuild": "node -e \"require('fs').cpSync('dist/assets', 'assets', {recursive: true}); require('fs').copyFileSync('dist/index.html', 'index.html')\"",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

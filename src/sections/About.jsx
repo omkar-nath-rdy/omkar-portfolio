@@ -72,6 +72,7 @@ export default function About() {
                   src={personalData.avatarUrl} 
                   alt={personalData.name} 
                   className="w-full h-full object-cover rounded-xl"
+                  onError={(e) => { e.currentTarget.src = './omkar-avatar.jpg'; }}
                 />
                 <span className="absolute bottom-1 right-1 w-3 h-3 rounded-full bg-[#10B981] border-2 border-[#08080A]" title="Active" />
               </div>

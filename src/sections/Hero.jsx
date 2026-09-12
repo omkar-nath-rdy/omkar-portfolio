@@ -185,6 +185,7 @@ export default function Hero() {
                   alt={personalData.name}
                   className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   loading="eager"
+                  onError={(e) => { e.currentTarget.src = './omkar-avatar.jpg'; }}
                 />
               </div>
 

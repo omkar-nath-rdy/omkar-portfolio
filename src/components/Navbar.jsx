@@ -69,6 +69,7 @@ export default function Navbar({ activeSection, soundEnabled, setSoundEnabled })
                 src={personalData.avatarUrl} 
                 alt={personalData.name} 
                 className="w-full h-full object-cover rounded-lg"
+                onError={(e) => { e.currentTarget.src = './omkar-avatar.jpg'; }}
               />
             </div>
             <div className="flex flex-col text-left">

@@ -10,6 +10,8 @@
  * ======================================================================================
  */
 
+import avatarImg from '../assets/omkar-avatar.jpg';
+
 export const personalData = {
   name: "Omkar Nath Reddy",
   tagline: "Aspiring AI Software Engineer",
@@ -23,7 +25,7 @@ export const personalData = {
   linkedin: "https://www.linkedin.com/in/omkar-nath-reddy-peddireddy-9067a936b/",
   
   // Omkar's signature illustrated avatar image
-  avatarUrl: "/omkar-avatar.jpg", 
+  avatarUrl: avatarImg, 
 
   // Authentic Student Bio
   bio: [
