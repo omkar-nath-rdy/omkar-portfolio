@@ -1,4 +1,4 @@
-# ✨ Omkar Nath Reddy — 3D AI Engineer Portfolio
+#  Omkar Nath Reddy — 3D AI Engineer Portfolio
 
 > A production-grade, interactive 3D portfolio demonstrating full-stack engineering, AI systems, and interactive creative web development.
 
