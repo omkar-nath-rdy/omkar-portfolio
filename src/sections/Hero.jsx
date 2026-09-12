@@ -38,12 +38,12 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             
             {/* Status Eyebrow Badge */}
-            <motion.div variants={itemVariants} className="mb-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#111116]/90 border border-white/[0.1] shadow-lg text-xs font-mono text-slate-300 backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+            <motion.div variants={itemVariants} className="mb-6 w-full flex justify-center lg:justify-start">
+              <div className="inline-flex flex-wrap items-center justify-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-2xl sm:rounded-full bg-[#111116]/90 border border-white/[0.1] shadow-lg text-xs font-mono text-slate-300 backdrop-blur-md max-w-full text-center">
+                <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse shrink-0" />
                 <span>{personalData.status}</span>
-                <span className="text-slate-600">/</span>
-                <span className="text-[#FFC700] flex items-center gap-1 font-semibold">
+                <span className="text-slate-600 hidden sm:inline">/</span>
+                <span className="text-[#FFC700] flex items-center gap-1 font-semibold shrink-0">
                   <Sparkles className="w-3 h-3" />
                   {personalData.availability}
                 </span>
@@ -170,16 +170,16 @@ export default function Hero() {
           {/* Right Column: Prominent Avatar Showcase (5 cols) */}
           <motion.div 
             variants={itemVariants}
-            className="lg:col-span-5 flex justify-center items-center relative"
+            className="lg:col-span-5 w-full flex justify-center items-center relative py-4"
           >
             {/* Ambient golden aura behind the avatar */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#FFC700]/30 via-[#F59E0B]/15 to-transparent rounded-full blur-[100px] -z-10 scale-90" />
+            <div className="absolute inset-0 max-w-[320px] sm:max-w-md mx-auto bg-gradient-to-tr from-[#FFC700]/30 via-[#F59E0B]/15 to-transparent rounded-full blur-[100px] -z-10 scale-90" />
 
-            {/* Avatar Card Container - Perfectly Framed with 0 Letterboxing */}
-            <div className="relative group p-1.5 rounded-[2.5rem] bg-gradient-to-b from-[#FFC700]/60 via-[#FFC700]/20 to-white/[0.08] shadow-[0_0_45px_rgba(255,199,0,0.22)] transition-all duration-500 hover:scale-[1.02]">
+            {/* Avatar Card Container - Perfectly Centered with flex-col */}
+            <div className="relative group p-1.5 rounded-[2.5rem] bg-gradient-to-b from-[#FFC700]/60 via-[#FFC700]/20 to-white/[0.08] shadow-[0_0_45px_rgba(255,199,0,0.22)] transition-all duration-500 hover:scale-[1.02] mx-auto w-fit max-w-full flex flex-col items-center">
               
-              {/* Inner Image Frame - Fills 100% of the container */}
-              <div className="relative w-72 sm:w-80 md:w-96 aspect-square rounded-[2.2rem] overflow-hidden bg-[#FFC700] shadow-2xl">
+              {/* Inner Image Frame - Perfectly centered squircle */}
+              <div className="relative w-[280px] xs:w-72 sm:w-80 md:w-96 aspect-square rounded-[2.2rem] overflow-hidden bg-[#FFC700] shadow-2xl mx-auto">
                 <img 
                   src={personalData.avatarUrl} 
                   alt={personalData.name}
@@ -187,25 +187,25 @@ export default function Hero() {
                   loading="eager"
                   onError={(e) => { e.currentTarget.src = './omkar-avatar.jpg'; }}
                 />
+
+                {/* Floating Mini Badge Top Right */}
+                <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#FFC700] text-black text-xs font-mono font-black shadow-xl flex items-center gap-1.5 animate-bounce z-10 border border-black/20">
+                  <Sparkles className="w-3.5 h-3.5 fill-black" />
+                  <span>BUILDER</span>
+                </div>
               </div>
 
-              {/* Floating Mini Badge Top Right */}
-              <div className="absolute -top-2.5 -right-2.5 px-3.5 py-1 rounded-full bg-[#FFC700] text-black text-xs font-mono font-black shadow-xl flex items-center gap-1.5 animate-bounce">
-                <Sparkles className="w-3.5 h-3.5 fill-black" />
-                <span>BUILDER</span>
-              </div>
-
-              {/* Clean Bottom Meta Card */}
-              <div className="mt-3 px-4 py-2.5 rounded-2xl bg-[#111116]/95 backdrop-blur-md border border-white/[0.1] flex items-center justify-between shadow-lg">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-                  <p className="text-xs font-display font-bold text-white tracking-wide">
+              {/* Clean Bottom Meta Card - Exact same width as avatar squircle */}
+              <div className="w-full mt-3 px-3.5 py-2.5 rounded-2xl bg-[#111116]/95 backdrop-blur-md border border-white/[0.1] flex items-center justify-between shadow-lg">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse shrink-0" />
+                  <p className="text-xs font-display font-bold text-white tracking-wide truncate">
                     {personalData.name}
                   </p>
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#FFC700] font-semibold">
+                <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#FFC700] font-semibold shrink-0">
                   <Cpu className="w-3.5 h-3.5" />
-                  <span>AI Engineer • B.Tech</span>
+                  <span>AI Engineer</span>
                 </div>
               </div>
             </div>
